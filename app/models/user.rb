@@ -7,4 +7,5 @@ class User < ApplicationRecord
          jwt_revocation_strategy: JwtDenylist
   has_many :products, foreign_key: 'owner_id'
   has_many :comments, foreign_key: 'users_id'
+  has_one_attached :avatar
 end

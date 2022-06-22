@@ -1,15 +1,15 @@
-class ProductController < ApplicationController
+class ProductsController < ApplicationController
     before_action :set_params, only: [:create, :update]
-    before_action :set_comment, only: [:update, :show, :destroy]
+    before_action :set_product, only: [:update, :show, :destroy]
 
     def index
-        @Products = Product.all
-        render json: @products
+        products = Product.all
+        render json: products
     end
 
     def show
-        if @Product
-            render json: @Product
+        if @product
+            render json: @product
         end
     end
     def create
@@ -37,11 +37,11 @@ class ProductController < ApplicationController
       end
 
 private
-    def set_comment
-        @Product = Product.find(params[:id])
+    def set_product
+        @product = Product.find(params[:id])
     end
     def set_params
-        params.require(:product).permit(:PName,:PStoct,:Price,:SerialNumber, owner_id)
+        params.permit(:name,:stock,:price,:serial_number, :owner_id, :image)
     end
 
 end

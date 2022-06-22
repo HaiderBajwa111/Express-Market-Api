@@ -41,7 +41,7 @@ private
         @Comment = Comment.find(params[:id])
     end
     def set_params
-        params.require(:comment).permit(:CData,:products_id, :users_id)
+        params.require(:comment).permit(:data,:products_id, :users_id)
     end
 
 end

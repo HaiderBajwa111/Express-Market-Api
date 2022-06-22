@@ -17,11 +17,14 @@ gem 'puma', '~> 5.0'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+ gem 'image_processing', '~> 1.2'
+ gem 'image_magick', '~> 0.1.9'
 
 gem 'devise'
 gem 'devise-jwt'
 gem 'rack-cors'
+
+gem 'active_model_serializers', '~> 0.10.13'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
